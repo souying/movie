@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>电影列表</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<script src="./js/jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="./css/movie.css">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="top">
+		<div class="top_main">
+			<div class="top_main_left">
+				<p>欢迎来到迅影网，一起分享电影给我们带来的快乐。</p>
+			</div>
+			<div class="top_main_right">
+				<a class="top_main_right_1" href="">保存到桌面</a>
+				<a class="top_main_right_2" href="">Ctrl+D 加入收藏夹</a>
+			</div>
+		</div>
+	</div>
+	<header>
+		<div class="logo">
+			<h1><a href="#"><img src="./images/logo.png" alt="这里改网站名字"></a></h1>
+		</div>
+		<div class="search">
+			<form action="" method="post">
+				<input type="search" name="search" placeholder="请输入电影名字">
+				<input type="submit" name="anniu" value="搜索">
+			</form>
+			<div class="tj">
+				<a href="#">星际迷航3</a>
+				<a href="#">谍影重重5</a>
+				<a href="#">使徒行者</a>
+				<a href="#">盗墓笔记</a>
+				<a href="#">喊·山</a>
+			</div>
+		</div>
+	</header>
+	<nav>
+		<div class="nav">
+			<div class="nav_item">
+				<a style="text-decoration:none;" href="#">
+					<p>首页</p>
+					<p>Home</p>
+				</a>
+			</div>
+			<div class="nav_item">
+				<a style="text-decoration:none;" href="#">
+					<p>电影</p>
+					<p>Movie</p>
+				</a>
+			</div>
+			<div class="nav_item">
+				<a style="text-decoration:none;" href="#">
+					<p>电视剧</p>
+					<p>Teleplay</p>
+				</a>
+			</div>
+			<div class="nav_item">
+				<a style="text-decoration:none;" href="#">
+					<p>动漫</p>
+					<p>Cartoon</p>
+				</a>
+			</div>
+			<div class="nav_item">
+				<a style="text-decoration:none;" href="#">
+					<p>交流圈</p>
+					<p>BBS</p>
+				</a>
+			</div>
+			<li id="reg"><a href="#">注册</a></li>
+			<li id="login"><a href="#">登录</a></li>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="tag-box">
+				<table class="table" style="margin-bottom:10px;">
+					<tbody>
+						<tr>
+							<td class="tag-span2">年份：</td>
+							<td class="tags">
+								<a class="tag active" href="/movie/" data-value="全部">全部</a>
+								<a class="tag" href="/movie/?year=2016" data-value="2016">2016</a>
+								<a class="tag" href="/movie/?year=2015" data-value="2015">2015</a>
+								<a class="tag" href="/movie/?year=2014" data-value="2014">2014</a>
+								<a class="tag" href="/movie/?year=2013" data-value="2013">2013</a>
+								<a class="tag" href="/movie/?year=2012" data-value="2012">2012</a>
+								<a class="tag" href="/movie/?year=2011" data-value="2011">2011</a>
+								<a class="tag" href="/movie/?year=2010" data-value="2010">2010</a>
+								<a class="tag" href="/movie/?year=2009" data-value="2009">2009</a>
+								<a class="tag" href="/movie/?year=2008" data-value="2008">2008</a>
+								<a class="tag" href="/movie/?year=2007" data-value="2007">2007</a>
+								<a class="tag" href="/movie/?year=2006" data-value="2006">2006</a>
+								<a class="tag" href="/movie/?year=2005" data-value="2005">2005</a>
+								<a class="tag" href="/movie/?year=ten_years_ago" data-value="十年前">十年前</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="tag-span2">评分排序：</td>
+							<td class="tags">
+								<a class="tag active" href="/movie/" data-value="全部">全部</a>
+								<a class="tag" href="/movie/?rating=10" data-value="9 ~ 10分">9 ~ 10分</a>
+								<a class="tag" href="/movie/?rating=9" data-value="8 ~ 9分">8 ~ 9分</a>
+								<a class="tag" href="/movie/?rating=8" data-value="7 ~ 8分">7 ~ 8分</a>
+								<a class="tag" href="/movie/?rating=7" data-value="6 ~ 7分">6 ~ 7分</a>
+								<a class="tag" href="/movie/?rating=6" data-value="5 ~ 6分">5 ~ 6分</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="tag-span2">国家地区：</td>
+							<td class="tags">
+								<a class="tag active" href="/movie/" data-value="全部">全部</a>
+								<a class="tag" href="/movie/?country=中国" data-value="中国">中国</a>
+								<a class="tag" href="/movie/?country=美国" data-value="美国">美国</a>
+								<a class="tag" href="/movie/?country=日本" data-value="日本">日本</a>
+								<a class="tag" href="/movie/?country=韩国" data-value="韩国">韩国</a>
+								<a class="tag" href="/movie/?country=印度" data-value="印度">印度</a>
+								<a class="tag" href="/movie/?country=法国" data-value="法国">法国</a>
+								<a class="tag" href="/movie/?country=泰国" data-value="泰国">泰国</a>
+								<a class="tag" href="/movie/?country=英国" data-value="英国">英国</a>
+								<a class="tag" href="/movie/?country=俄罗斯" data-value="俄罗斯">俄罗斯</a>
+								<a class="tag" href="/movie/?country=加拿大" data-value="加拿大">加拿大</a>
+								<a class="tag" href="/movie/?country=意大利" data-value="意大利">意大利</a>
+							</td>
+						</tr>
+						<tr style="border-bottom:1px solid #DDD;">
+							<td class="tag-span2">影视类型：</td>
+							<td class="tags">
+								<a class="tag active" href="/movie/" data-value="全部">全部</a>
+								<a class="tag" href="/movie/?tag=传记" data-value="传记">传记</a>
+								<a class="tag" href="/movie/?tag=喜剧" data-value="喜剧">喜剧</a>
+								<a class="tag" href="/movie/?tag=剧情" data-value="剧情">剧情</a>
+								<a class="tag" href="/movie/?tag=枪战" data-value="枪战">枪战</a>
+								<a class="tag" href="/movie/?tag=恐怖" data-value="恐怖">恐怖</a>
+								<a class="tag" href="/movie/?tag=励志" data-value="励志">励志</a>
+								<a class="tag" href="/movie/?tag=动画" data-value="动画">动画</a>
+								<a class="tag" href="/movie/?tag=歌舞" data-value="歌舞">歌舞</a>
+								<a class="tag" href="/movie/?tag=罪案" data-value="罪案">罪案</a>
+								<a class="tag" href="/movie/?tag=偶像" data-value="偶像">偶像</a>
+								<a class="tag" href="/movie/?tag=悬疑" data-value="悬疑">悬疑</a>
+								<a class="tag" href="/movie/?tag=爱情" data-value="爱情">爱情</a>
+								<a class="tag" href="/movie/?tag=惊悚" data-value="惊悚">惊悚</a>
+								<a class="tag" href="/movie/?tag=综艺" data-value="综艺">综艺</a>
+								<a class="tag" href="/movie/?tag=纪录" data-value="纪录">纪录</a>
+								<a class="tag" href="/movie/?tag=青春" data-value="青春">青春</a>
+								<a class="tag" href="/movie/?tag=科幻" data-value="科幻">科幻</a>
+								<a class="tag" href="/movie/?tag=冒险" data-value="冒险">冒险</a>
+								<a class="tag" href="/movie/?tag=魔幻" data-value="魔幻">魔幻</a>
+								<a class="tag" href="/movie/?tag=丧尸" data-value="丧尸">丧尸</a>
+								<a class="tag" href="/movie/?tag=动作" data-value="动作">动作</a>
+								<a class="tag" href="/movie/?tag=幻想" data-value="幻想">幻想</a>
+								<a class="tag" href="/movie/?tag=战争" data-value="战争">战争</a>
+								<a class="tag" href="/movie/?tag=情色" data-value="情色">情色</a>
+								<a class="tag" href="/movie/?tag=血腥" data-value="血腥">血腥</a>
+								<a class="tag" href="/movie/?tag=西部" data-value="西部">西部</a>
+								<a class="tag" href="/movie/?tag=童话" data-value="童话">童话</a>
+								<a class="tag" href="/movie/?tag=暴力" data-value="暴力">暴力</a>
+								<a class="tag" href="/movie/?tag=古装" data-value="古装">古装</a>
+								<a class="tag" href="/movie/?tag=灾难" data-value="灾难">灾难</a>
+								<a class="tag" href="/movie/?tag=谍战" data-value="谍战">谍战</a>
+								<a class="tag" href="/movie/?tag=生活" data-value="生活">生活</a>
+								<a class="tag" href="/movie/?tag=讽刺" data-value="讽刺">讽刺</a>
+								<a class="tag" href="/movie/?tag=其他" data-value="其他">其他</a>
+								<a class="tag" href="/movie/?tag=同性" data-value="同性">同性</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12" style="padding:0 5px;">
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-1-5 col-sm-4 col-xs-6 movie-item">
+					<div class="movie-item-in">
+						<a style="position:relative;display:block;" title="冲天火" target="_blank" href="http://www.saaee.com/movie/200881.html">
+							<img alt="冲天火" title="冲天火" src="http://wx4.sinaimg.cn/mw690/0062xRKhgy1fc2huab0o1j30bx0gojve.jpg">
+							<span class="qtag hdtag">高清</span>
+							<div class="item-hover"></div>
+						</a>
+						<div class="meta">
+							<h1>
+								<a href="http://www.saaee.com/movie/200881.html" target="_blank" title="冲天火">冲天火</a>
+								<em> - 3.8分</em>
+							</h1>
+							<div class="otherinfo">
+								类型：
+								<a class="movietype" target="_blank" href="/movie/?tag=%E5%8A%A8%E4%BD%9C">动作</a>
+								<a class="movietype" target="_blank" href="/movie/?tag=%E6%82%AC%E7%96%91">悬疑</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!-- 分页 -->
+		<div class="pager-bg">
+			<ul class="pagination pagination-sm">
+				<li class="active">
+					<a>1</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="2">2</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="3">3</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="4">4</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="5">5</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="6">6</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2" data-ci-pagination-page="2" rel="next">下一页</a>
+				</li>
+				<li>
+					<a href="/movie/?page=2222" data-ci-pagination-page="2222">末页</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<div class="foot">
+			<p>
+				免责声明：本网站所有内容都是靠程序在互联网上自动搜集而来，仅供测试和学习交流。
+			<br>
+				目前正在逐步删除和规避程序自动搜索采集到的不提供分享的版权影视。
+			</p>
+			<p>若侵犯了您的权益，请发邮件通知站长，邮箱：service@xunyingwang.com</p>
+			<p class="friend-link">
+				友情链接：
+				<a target="_blank" href="http://www.id97.com/">97电影网</a>
+			</p>
+			<em>
+				♥
+				<a href="http://www.xunyingwang.com/">迅影网</a>
+				· VERSION: 1.3.9 · 26.9ms
+			</em>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: rgb(90,90,90) url('http://ww1.sinaimg.cn/large/0069qWFHgw1f0f9bags54j31hc0pzk3d.jpg') no-repeat fixed top;
+    background-size:100% 100%;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+    margin: 0 3px;
+}
+.main-box{
+    margin:5% auto 0;
+    background:#fff;
+    width:350px;
+    padding: 25px;
+}
+
+.form-control,.btn{
+    border-radius: 0;
+}
+.vcode{
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+}
+.form-header{
+    font-family: '宋体';
+    margin: 0 0 10px;
+    text-align: center;
+}
+.form-header img{
+    height: 48px;
+    width: 48px;
+}
+.extra{
+    font-size: 12px;
+    display: inline-block;
+    margin:10px 10px 0 0;
+}

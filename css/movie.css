@@ -1,0 +1,400 @@
+		*{
+			margin:0;
+			padding:0;
+		}
+		a{
+			text-decoration:none;
+			color:#555;
+		}
+		li{
+			list-style:none;
+		}
+		.cl{
+			clear:both;
+		}
+		body{
+		    background: rgb(245, 245, 245) none repeat scroll 0 0;
+		    font-family: "HanHei SC","PingFang SC","Helvetica Neue","Helvetica","Microsoft YaHei","WenQuanYi Micro Hei","STHeitiSC-Light","Arial","Segoe UI",sans-serif;
+		    height: 100%;
+		    line-height: 1.5;
+		    margin: 0;
+		    min-width: 1040px !important;
+		    overflow-wrap: break-word;
+		    width: 100%;
+		}
+
+		/*顶部开始*/
+		#top{
+			width:100%;
+			height:35px;
+			padding:5px 0px;
+			border-bottom:1px solid #ddd;
+		}
+		.top_main{
+			width:1010px;
+			height:35px;
+			padding:0px 15px;
+			line-height:21px;
+			margin:0 auto;
+		}
+		.top_main_left p{
+			color:#777790;
+			font-size:12px;
+			float:left;
+			margin-bottom:10px;
+		}
+		.top_main_right_2{
+			float:right;
+			color:#777;
+			font-size:12px;
+		}
+		.top_main_right_1{
+			float:right;
+			color:#F00;
+			font-size:12px;
+			margin-left:10px;
+		}
+		.top_main_right a:hover{
+			text-decoration:underline;
+		}
+		/*header部分*/
+		header{
+			width:1025px;
+			height:55px;
+			padding:20px 0px;
+			padding-left:15px;
+			margin:0 auto;
+		}
+		.logo{
+			width:210px;
+			height:50px;
+			float:left;
+			margin-top:-20px;
+		}
+		.search{
+			width:327px;
+			height:50px;
+			margin-top:5px;
+			float:right;
+		}
+		input[type=search]{
+			width:241px;
+			height:34px;
+			padding:6px 12px;
+			border:1px solid #ccc;
+			margin-top:-1px;
+		}
+		input[type=submit]{
+			width:72px;
+			height:34px;
+			border:1px solid #2E6DA4;
+			padding:6px 12px;
+			margin-left:-5px;
+			background:#337AB7;
+			color:#fff;
+		}
+		input[type=submit]:hover{
+			background:#286090;
+		}
+		.tj{
+			margin-top:5px;
+			font-size:12px;
+		}
+		.tj a{
+			margin-right:5px;
+		}
+		.tj a:first-child{
+			margin-left:20px;
+		}
+		.tj a:hover{
+			text-decoration:underline;
+		}
+		/*导航开始*/
+		nav{
+			width:100%;
+			height:40px;
+			margin-bottom:20px;
+			background:;
+			margin-top: 40px;
+		}
+		.nav{
+			width:1010px;
+			height:40px;
+			padding:0px 15px;
+			margin:0 auto;
+			background:;
+			overflow:hidden;
+
+		}
+		/*翻转导航开始*/
+		.nav:after{
+			content:'';
+			display:block;
+			overflow:hidden;
+			clear:both;
+		}
+		.nav_item{
+			width:100px;
+			height:40px;
+			float:left;
+			/*3d元素距离视频的距离  定义后子元素会获取一个3d透视效果而不是元素的本身*/
+			perspective:4000px;
+			-webkit-perspective:4000px;
+			-moz-perspective:4000px;
+			-0-perspective:4000px;
+			-ms-perspective:4000px;
+		}
+		.nav_item a{
+			margin-right:5px;
+			height:40px;
+			display:block;
+			transition:all 500ms ease 0s;
+			-webkit-transform-style:preserve-3d;
+			-moz-transform-style:preserve-3d;
+			-0-transform-style:preserve-3d;
+			-ms-transform-style:preserve-3d;
+			/*.nav_item的子元素可以呈3d效果*/
+			transform-style:preserve-3d;
+		}
+		.nav_item a p{
+			height:40px;
+			line-height:40px;
+			margin:0;
+			border-radius:5px;
+			font-size:14px;
+			font-size:"黑体";
+			text-align:center;
+			transition:all 500ms ease 0s;
+		}
+		.nav_item a{
+			text-decoration:none;
+		}
+		.nav_item a p:first-child{
+			border-radius:5px;
+			color:#fff;
+			background:#ff7434;
+			/*沿z轴移动50橡素   20px高度除以2*/
+			transform:translateZ(20px);
+			-webkit-transform:translateZ(20px);
+			-moz-transform:translateZ(20px);
+			-0-transform:translateZ(20px);
+			-ms-transform:translateZ(20px);
+		}
+		.nav_item a p:last-child{
+			border-radius:5px;
+			color:#fff;
+			background:#85bc00;
+			/*沿z轴移动50橡素  沿X轴旋转-90度  20px高度除以2*/
+			transform:translateZ(20px) rotateX(-90deg);
+			-webkit-transform:translateZ(20px) rotateX(-90deg);
+			-moz-transform:translateZ(20px) rotateX(-90deg);
+			-0-transform:translateZ(20px) rotateX(-90deg);
+			-ms-transform:translateZ(20px) rotateX(-90deg);
+			/*设置上边距为-20px  20px高度除以2*/
+			margin-top:-20px;
+		}
+		.nav_item a:hover{
+			margin-top:0px;
+			transform:rotateX(90deg);
+			-webkit-transform:rotateX(90deg);
+			-moz-transform:rotateX(90deg);
+			-0-transform:rotateX(90deg);
+			-ms-transform:rotateX(90deg);
+		}
+		.nav_item a:hover p:last-child{
+			margin-top:0px;
+			transform:translateZ(0) rotateX(-90deg);
+			-webkit-transform:translateZ(0) rotateX(-90deg);
+			-moz-transform:translateZ(0) rotateX(-90deg);
+			-0-transform:translateZ(0) rotateX(-90deg);
+			-ms-transform:translateZ(0) rotateX(-90deg);
+		}
+		nav>.nav>li{
+			width:100px;
+			height:40px;
+			background:#ff7434;
+			float:right;
+			margin-right:5px;
+			border-radius:5px;
+			line-height:40px;
+			text-align:center;
+			font-size:14px;
+		}
+		nav>.nav>li>a{
+			color:#fff;
+			text-decoration:none;
+			padding:0;
+		}
+		.nav li:hover a{
+			color:red;
+		}
+		
+		/*end------------------*/
+		.container{
+			width:1040px !important;
+			margin-left: auto;
+		    margin-right: auto;
+		    padding-left: 15px;
+		    padding-right: 15px;
+		}
+		.tag-box{
+			padding:0 15px;
+			margin-bottom:20px;
+		}
+		.tag-span2{
+			font-weight:bolder;
+			vertical-align: middle !important;
+			width:100px;
+		}
+		.tags{
+			font-size:0;
+		}
+		.tags .tag.active{
+			background: rgb(95, 170, 254) none repeat scroll 0 0;
+    		color: #fff;
+		}
+		.tags .tag{
+			background-color: #e6e6e6;
+		    border-radius: 2px;
+		    color: #888;
+		    display: inline-block;
+		    font-size: 12px;
+		    line-height: 1.5;
+		    margin-bottom: 5px;
+		    margin-right: 5px;
+		    padding: 0.2em 8px;
+		}
+		.tag:hover{
+			text-decoration:none;
+			background: rgb(95, 170, 254) none repeat scroll 0 0;
+			color:#fff;
+		}
+		.movie-item{
+			padding:10px;
+		}
+		.container .col-xs-1-5{
+			min-height: 1px;
+			float:left;
+			width:20%;
+			position: relative;
+		}
+
+		element.style {
+		    display: block;
+		    position: relative;
+		}
+		.movie-item img{
+			height:265px;
+			width:100%;
+		}
+		.hdtag{
+			background: #09c878 none repeat scroll 0 0;
+		}
+		.qtag{
+			border: medium none;
+		    bottom: 0;
+		    color: #fff;
+		    font-size: 12px;
+		    padding: 0 3px;
+		    position: absolute;
+		    right: 0;
+		}
+		.movie-item-in{
+			position: relative;
+		}
+		.item-hover {
+		    background: #000 none no-repeat scroll 10px 100px;
+		    font-size: 0;
+		    height: 0;
+		    opacity: 0.5;
+		    position: absolute;
+		    top: 0;
+		    width: 100%;
+		}
+		.movie-item-in:hover .item-hover {
+		    background-image: url("../images/play-icon.png");
+		    background-position: center center;
+		    height: 100%;
+		}
+		.meta {
+		    background: #fff none repeat scroll 0 0;
+		    padding: 5px;
+		}
+		.meta h4, .meta h1 {
+		    font-size: 14px;
+		    height: 17px;
+		    line-height: 17px;
+		    margin: 0;
+		    overflow: hidden;
+		    padding: 0;
+		    width: 100%;
+		}
+		.meta h4 a, .meta h1 a {
+		    color: #555;
+		}
+		em {
+		    color: #8c8c8c;
+		    font-size: 12px;
+		    font-style: normal;
+		}
+		.otherinfo {
+		    color: #7e7e7e;
+		    font-size: 12px;
+		    font-weight: normal;
+		    height: 20px;
+		    line-height: 20px;
+		    margin-top: 5px;
+		    overflow: hidden;
+		    width: 100%;
+		}
+		.otherinfo a {
+		    background-color: rgb(230, 230, 230);
+		    border-radius: 2px;
+		    color: #999;
+		    display: inline-block;
+		    font-size: 12px;
+		    line-height: 1.2;
+		    margin: 0 5px 5px 0;
+		    padding: 2px 5px;
+		}
+		/*end:;*/
+		/*分页开始*/
+		.pager-bg {
+		    background: #fff none repeat scroll 0 0;
+		    font-size: 0;
+		    padding-left: 15px;
+		    margin-bottom:20px;
+		}
+		.pagination {
+		    border-radius: 4px;
+		    display: inline-block;
+		    margin: 0;
+		    padding-left: 0;
+		}
+		.pagination > li {
+		    display: inline;
+		}
+		/*底部开始*/
+		footer{
+			width:100%;
+			height:auto;
+			overflow:hidden;
+			border-top:1px solid #DDDDDD;
+			margin-bottom:20px;
+		}
+		footer .foot{
+			width:1040px;
+			height:120px;
+			padding-top:20px;
+			margin:0 auto;
+			color: #666;
+    		font-size: 12px;
+    		text-align: center;
+		}
+		.foot p{
+			margin-bottom:10px;
+		}
+		.foot a:hover{
+			text-decoration:underline;
+		}
+
